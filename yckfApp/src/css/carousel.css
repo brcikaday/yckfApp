@@ -1,0 +1,149 @@
+/* body {
+  font-family: Arial, sans-serif;
+  background: #0d1b2a;
+  /* color: white; */
+  /* margin: 0;
+  padding: 0;
+} */
+
+.testimonial-section {
+  width: 100%;
+  max-width: auto;
+  background-color: var(--bg);
+  text-align: center;
+  padding: 50px 20px;
+  /* margin: 30px auto; */
+}
+
+.testimonial-section h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: var(--text);
+}
+
+.testimonial-section p {
+  color: var(--muted);
+  margin-bottom: 40px;
+}
+
+.carousel-container {
+  position: relative;
+  width:100%;
+  display: flex;
+  max-width: 1000px;
+  overflow: hidden;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+  align-items: stretch;
+}
+
+.card {
+  flex: 0 0 calc(100% / 3);
+  max-width: 33.33%;
+  box-sizing: border-box;
+  padding: 20px;
+  background: transparent;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
+
+}
+
+/* .card:hover {
+  transform: translateY(-8px);   /* lift effect */
+  /* box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+} */ 
+
+.card-content {
+  background: var(--surface-2);
+  flex: 1;
+  border-radius: 12px;
+  padding: 30px 20px;
+  min-height: 220px;
+}
+
+.quote {
+  font-size: 1.5rem;
+  color: var(--accent);
+  transition: transform 0.3s ease, color 0.3s ease;
+
+}
+
+.card-content p {
+  font-size: 0.95rem;
+  margin: 15px 0;
+  color: var(--text);
+}
+
+.carousel-track .card:hover .quote {
+  transform: scale(1.5);
+  color: var(--accent-hover);
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.profile img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+    transition: transform 0.3s ease, border 0.3s ease;
+
+}
+
+.carousel-track .card:hover .profile img {
+  transform: scale(1.1);
+  border: 3px solid #38bdf8;
+}
+
+.profile h4 {
+  margin: 5px 0;
+  color: var(--text);
+}
+
+.profile span {
+  font-size: 0.8rem;
+  color: var(--accent);
+}
+
+/* Arrows */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background:transparent;
+  border: none;
+  color: var(--text);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 50%;
+  transition: background 0.3s;
+  z-index: 2;
+}
+
+.carousel-btn:hover {
+    color: var(--accent);
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+

@@ -1,0 +1,111 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, Poppins, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  
+  /* Light theme - applied by default */
+  --bg: #f8fafc;
+  --text: #0b1220;
+  --muted: #475569;
+  --border: #cbd5e1;
+  --surface-1: #ffffff;
+  --surface-2: #f1f5f9;
+  --surface-3: #e2e8f0;
+  --surface-4: #f8fafc;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --success-bg: #d4edda;
+  --success-text: #155724;
+  --warning-bg: #fff3cd;
+  --warning-text: #856404;
+  --error-bg: #f8d7da;
+  --error-text: #721c24;
+  --success: #28a745;
+  --danger: #dc3545;
+  --info: #007bff;
+  
+  /* Additional light theme text colors */
+  --text-primary: #0b1220;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+
+  color-scheme: light;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Dark theme */
+[data-theme="dark"] {
+  --bg: #0b1022;
+  --text: #ffffff;
+  --muted: #cbd5e1;
+  --border: #334155;
+  --surface-1: #111e2b;
+  --surface-2: #1e293b;
+  --surface-3: #0f172a;
+  --surface-4: #132033;
+  --accent: #3b82f6;
+  --accent-hover: #2563eb;
+  --success-bg: #155724;
+  --success-text: #d4edda;
+  --warning-bg: #856404;
+  --warning-text: #fff3cd;
+  --error-bg: #721c24;
+  --error-text: #f8d7da;
+  --success: #2fd655;
+  --danger: #ff4d5e;
+  --info: #3b9eff;
+  
+  /* Additional dark theme text colors */
+  --text-primary: #ffffff;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  
+  /* Force text colors in dark mode */
+  color: var(--text);
+}
+
+  /* color-scheme: dark;
+} */
+
+a {
+  font-weight: 500;
+  color: var(--accent);
+  text-decoration: inherit;
+}
+a:hover {
+  color: var(--accent-hover);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Scrollbar styling for dark mode */
+[data-theme="dark"] ::-webkit-scrollbar {
+  width: 12px;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-track {
+  background: var(--surface-2);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: var(--surface-3);
+  border-radius: 6px;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* Force auth pages to always use light theme */
+.auth-page-wrapper {
+  min-height: 100vh;
+  background-color: #faf9f6 !important;
+}
+

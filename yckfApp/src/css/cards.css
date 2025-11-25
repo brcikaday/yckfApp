@@ -1,0 +1,169 @@
+.course-card {
+  background: var(--surface-1);
+  color: var(--text);
+  border-radius: 16px;
+  padding: 24px;
+  width: 360px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  font-family: 'Inter', sans-serif;
+}
+
+.course-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.course-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+  color: var(--muted);
+}
+
+.course-time {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.course-level {
+  background: var(--accent);
+  color: #fff;
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+}
+
+.course-desc {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.course-subtitle {
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.tags span {
+  background: var(--surface-3);
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  color: var(--text);
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn.primary {
+  background: var(--accent);
+  color: white;
+}
+
+.btn.primary:hover {
+  background: var(--accent-hover);
+}
+
+.btn.secondary {
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+.btn.secondary:hover {
+  background: var(--surface-3);
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.free-access {
+  color: #4ef37b;
+  font-weight: 500;
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.icon-container .icon {
+  font-size: 24px;
+}
+
+.icon-container .icon.blue {
+  color: #4A90E2;
+}
+
+.icon-container .icon.yellow {
+  color: #FFD700;
+}
+
+.icon-container .icon.green {
+  color: #4CAF50;
+}
+
+.icon-container .icon.purple {
+  color: #9C27B0;
+}
+
+.icon-container .icon.pink {
+  color: #E91E63;
+}
+
+.impact-card-content {
+  padding: 20px;
+  border-radius: 8px;
+  background: var(--surface-2);
+  transition: transform 0.2s ease;
+}
+
+.impact-card-content:hover {
+  transform: translateY(-5px);
+}
+
+.impact-card-content h3 {
+  margin: 0 0 12px 0;
+  color: var(--text);
+}
+
+.impact-card-content p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}

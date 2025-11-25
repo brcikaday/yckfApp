@@ -1,0 +1,159 @@
+.course-card {
+  background-color: var(--surface-1);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.course-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
+}
+
+.course-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.course-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0;
+  line-height: 1.4;
+  flex: 1;
+}
+
+.access-badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.access-badge.free {
+  background-color: var(--success-bg);
+  color: var(--success-text);
+}
+
+.access-badge.premium {
+  background-color: var(--warning-bg);
+  color: var(--warning-text);
+}
+
+.course-meta {
+  display: flex;
+  gap: 15px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.course-time,
+.course-level {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.course-desc {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.course-subtitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  margin-top: 5px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: var(--surface-2);
+  color: var(--muted);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  flex: 1;
+  min-width: 120px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+}
+
+.btn.primary {
+  background-color: var(--accent);
+  color: white;
+}
+
+.btn.primary:hover {
+  background-color: var(--accent-hover);
+}
+
+.btn.secondary {
+  background-color: var(--surface-2);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btn.secondary:hover {
+  background-color: var(--surface-3);
+}
+
+.btn.full-width {
+  min-width: 100%;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+  font-size: 12px;
+}
+
+.free-access {
+  color: var(--success-text);
+  font-weight: 600;
+}
+
+.no-reg {
+  color: var(--muted);
+}

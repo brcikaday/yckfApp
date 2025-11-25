@@ -1,0 +1,458 @@
+.hero {
+  min-height: 60vh;
+  background: url("../assets/download (3).jpg") no-repeat center center/cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px 16px;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 15, 20, 0.5); /* overlay remains subtle */
+}
+
+.hero-content .btn {
+  padding: 12px 24px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  padding: 20px;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content h1 {
+  font-size: clamp(1.75rem, 5vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #ffffff;
+}
+
+.hero-content p {
+  font-size: clamp(0.95rem, 2.5vw, 1.2rem);
+  color: var(--muted);
+  margin-top: 8px;
+  max-width: 60ch;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  gap: 12px;
+  width: 100%;
+  max-width: 320px;
+  margin-top: 16px;
+}
+
+.hero-content .btn-primary {
+  background: linear-gradient(to right, #007bff, #0049b7) ;
+  color: white;
+}
+
+.hero-content .btn-primary:hover {
+  opacity: 0.9;
+}
+
+.hero-content .btn-secondary {
+  background: transparent;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+}
+
+.hero-content .btn-secondary:hover {
+  background: white;
+  color: #0d1117;
+}
+
+.brief {
+  width: 100%;
+  background: var(--surface-1);
+  padding: 40px 16px;
+}
+
+.brief-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.brief .image {
+  background: url("../assets/download (3).jpg") no-repeat center center/cover;
+  width: 100%;
+  max-width: 700px;
+  height: 450px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+.brief-text {
+  flex: 1;
+  max-width: 600px;
+  padding: 0 8px;
+}
+
+.brief-text h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: var(--text);
+}
+
+.brief-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: justify;
+  color: var(--muted);
+}
+
+.who {
+  width: 100%;
+  background: var(--surface-2);
+  padding: 40px 16px;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* .who-text {
+  border: 1px solid #444;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  max-width: 500px;
+} */
+
+.who h3 {
+font-size: 2rem; /* Large heading size */
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 2rem;
+}
+
+.who p {
+  font-size: 0.9rem; /* Slightly larger paragraph text */
+  line-height: 1.6;
+  max-width: 500px;
+  margin: 0 auto 3rem auto;
+}
+
+.who-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  width: 100%;
+  max-width: 1200px;
+  justify-content: center;
+  justify-items: center;
+  align-items: stretch;
+  padding: 12px;
+  margin: 0 auto;
+}
+
+.who-cards .card1 {
+  background-color: var(--surface-2); /* Section surface */
+  border: 1px solid var(--border);  /* Subtle border */
+  border-radius: 12px;
+  padding: 1rem;
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  color: var(--text);
+  text-align: center;
+  font-size: 2rem;
+
+}
+/* Card1 title styling inside who sections */
+.who-cards .card1 h2 {
+  font-size: 1.3rem;
+  margin: 0 0 8px 0;
+  color: var(--accent);
+}
+
+.who-cards .card1 p {
+  font-size: 0.75rem; /* Slightly larger paragraph text */
+ /* Light gray for body text */
+}
+
+.who-btn {
+  background-color: #E2E8F0; /* Light gray background */
+            color: #1A202C;           /* Dark text to match the page background */
+            border: none;
+            border-radius: 8px;
+            margin-top: 20px;
+            padding: 12px 24px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease; /* Smooth hover effect */
+        }
+
+.who-btn:hover {
+  background-color: #CBD5E0; /* Slightly darker on hover */
+        }
+
+        /* --- Responsive Design for Mobile --- */
+        @media (max-width: 768px) {
+            .who h3 {
+                font-size: 2rem;
+            }
+
+            .who p {
+                font-size: 1rem;
+            }
+
+            .who-cards {
+                flex-direction: column; /* Stacks the cards vertically on smaller screens */
+            }
+  }
+
+.what-we-do {
+    width: 100%;
+    background: var(--surface-1);
+    margin: 0;
+    padding: 40px 16px;
+    text-align: center;
+}
+
+.what-we-do-text {
+    margin-bottom: 50px;
+}
+
+.what-we-do-text h2 {
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.what-we-do-text p {
+    font-size: 1.1em;
+    /* Light gray for body text */
+    color: #A0AEC0; 
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* --- 2. Cards Grid Layout --- */
+.what-we-do-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+.what-we-do-cards .card2 { 
+    /* Slightly lighter surface for the card box */
+    background-color: var(--surface-2); 
+    border-radius: 12px;
+    padding: 30px;
+    text-align: left;
+    /* min-height: 200px;  */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border); 
+    display: flex;
+    flex-direction: column;
+}
+
+.what-we-do-cards .card2:hover {
+    /* transform: translateY(-5px);
+    Subtle blue highlight border on hover */
+    border-color: rgba(74, 144, 226, 0.4); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Base Card Title (Assuming the first card uses the primary accent blue) */
+.what-we-do-cards .card2 h2 {
+    font-size: 1.3em;
+    font-weight: 600;
+    /* Primary accent blue */
+    color: var(--accent); 
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+/* Card Content */
+.what-we-do-cards .card2 p {
+    /* Light gray for body text */
+    color: var(--muted); 
+    font-size: 0.95em;
+    line-height: 1.5;
+}
+
+.Our-impact {
+    width: 100%;
+    background: var(--surface-1);
+    margin: 0;
+    padding: 40px 16px;
+    text-align: center;
+}
+
+
+.Our-impact h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 30px;
+}
+
+
+.Our-impact-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+
+.impact-card-content { 
+    /* Slightly lighter surface for the card box */
+    background-color: transparent; 
+    border-radius: 12px;
+    border: var(--border) solid 1px;
+    padding: 30px 20px;
+    text-align: center;
+    min-height: 150px; /* Ensures consistent card height */
+    transition: box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+
+.impact-card-content .icon-container {
+    width: 15px;
+    height: 15px;
+    margin: 0 auto 15px auto;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.impact-card-content h3 {
+    font-size: 1em; 
+    font-weight: 700;
+    margin: 0 0 5px 0;
+    line-height: 1.2;
+    color: var(--accent); 
+}
+
+.impact-card-content p {
+    font-size: 0.9em;
+    color: var(--muted); 
+    margin: 0;
+}
+
+
+.Our-impact-cards > :nth-child(1) .icon-container {
+    background-color: rgba(74, 144, 226, 0.15); 
+}
+.Our-impact-cards > :nth-child(1) h3 {
+    color: #4A90E2; /* Blue number */
+}
+
+.Our-impact-cards > :nth-child(1) img {
+    filter: invert(50%) sepia(90%) saturate(1500%) hue-rotate(180deg) brightness(1.2);
+}
+
+
+
+.Our-impact-cards > :nth-child(2) .icon-container {
+    background-color: rgba(80, 227, 194, 0.15); 
+}
+.Our-impact-cards > :nth-child(2) h3 {
+    color: #50E3C2; /* Green number */
+}
+.Our-impact-cards > :nth-child(2) img {
+    filter: invert(70%) sepia(30%) saturate(1500%) hue-rotate(130deg); 
+}
+
+
+.Our-impact-cards > :nth-child(3) .icon-container {
+    background-color: rgba(248, 231, 28, 0.15); 
+}
+.Our-impact-cards > :nth-child(3) h3 {
+    color: #F8E71C; /* Yellow number */
+}
+.Our-impact-cards > :nth-child(3) img {
+    filter: invert(70%) sepia(40%) saturate(1500%) hue-rotate(0deg); 
+}
+
+
+/* Utility container for consistent side padding */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+/* Breakpoints */
+@media (min-width: 360px) {
+  .hero { padding: 28px 16px; }
+}
+
+@media (min-width: 480px) {
+  .hero-buttons { flex-direction: row; align-items: center; }
+  .who { padding: 48px 20px; }
+  .what-we-do { padding: 48px 20px; }
+}
+
+@media (min-width: 768px) {
+  .brief { padding: 60px 24px; }
+  .brief-content { flex-direction: row; align-items: center; gap: 32px; }
+  .who-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; justify-items: center; align-items: stretch; }
+  .what-we-do-cards { grid-template-columns: repeat(2, minmax(260px, 1fr)); gap: 24px; }
+  .Our-impact-cards { grid-template-columns: repeat(3, minmax(180px, 1fr)); }
+}
+
+@media (min-width: 1024px) {
+  .hero { min-height: 80vh; }
+  .container { max-width: 100%; }
+  .who { padding: 64px 24px; }
+  .what-we-do { padding: 64px 24px; }
+  .who-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 800px; margin-left: auto; margin-right: auto; justify-items: center; align-items: stretch; }
+  .who-cards .card1 { padding: 0.8rem; max-width: 320px; }
+  .what-we-do-cards { grid-template-columns: repeat(auto-fit, minmax(260px, 320px)); gap: 24px; justify-content: center; max-width: 1100px; margin-left: auto; margin-right: auto; }
+  .what-we-do-cards { justify-items: center; }
+  .what-we-do-cards .card2 { max-width: 300px; width: 100%; margin: 0 auto; }
+  .Our-impact-cards { grid-template-columns: repeat(auto-fit, minmax(200px, 280px)); gap: 24px; justify-content: center; max-width: 1000px; margin-left: auto; margin-right: auto; }
+  .Our-impact-cards { justify-items: center; }
+  .Our-impact-cards .card2 { max-width: 260px; width: 100%; margin: 0 auto; }
+}
+
+@media (min-width: 1280px) {
+  .container { max-width: 100%; }
+  .what-we-do-cards { gap: 28px; }
+}
+
+

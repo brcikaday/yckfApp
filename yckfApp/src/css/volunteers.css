@@ -1,0 +1,259 @@
+/* Volunteers Hero Section */
+.volunteers-hero {
+  min-height: 40vh;
+  background: no-repeat center center/cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px 16px;
+}
+
+.volunteers-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 15, 20, 0.6);
+}
+
+.volunteers-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.volunteers-hero-content h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 16px 0;
+}
+
+.volunteers-hero-content p {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  color: var(--muted);
+  margin: 0;
+}
+
+/* Filters Section */
+.filters-section {
+  width: 100%;
+  padding: 40px 16px 20px 16px;
+  background: var(--surface-1);
+}
+
+.filters-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 16px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface-2);
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.search-box input::placeholder {
+  color: var(--muted);
+}
+
+.filters-grid select {
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface-2);
+  color: var(--text);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.filters-grid select:focus,
+.search-box input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+/* Results Count */
+.results-count {
+  width: 100%;
+  padding: 0 16px 20px 16px;
+  background: var(--surface-1);
+}
+
+.results-count p {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin: 0;
+  text-align: left;
+}
+
+/* Volunteers Section */
+.volunteers-section {
+  width: 100%;
+  padding: 20px 16px 60px 16px;
+  background: var(--surface-1);
+}
+
+.volunteers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Volunteer Card */
+.volunteer-card {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.volunteer-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.status-label {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+}
+
+.status-label span {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-current {
+  background: #10b981;
+  color: white;
+}
+
+.status-past {
+  background: #6b7280;
+  color: white;
+}
+
+.volunteer-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.volunteer-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.volunteer-card:hover .volunteer-image img {
+  transform: scale(1.05);
+}
+
+.volunteer-info {
+  padding: 20px;
+}
+
+.volunteer-info h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 8px 0;
+}
+
+.volunteer-info .role {
+  font-size: 1rem;
+  color: var(--text);
+  margin: 0 0 4px 0;
+  font-weight: 500;
+}
+
+.volunteer-info .area {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin: 0 0 4px 0;
+}
+
+.volunteer-info .period {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin: 0 0 16px 0;
+}
+
+.impact-section h4 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 8px 0;
+}
+
+.impact-section .impact {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .filters-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .volunteers-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .filters-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  
+  .volunteers-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .volunteers-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 1000px;
+  }
+}
+
+/* Utility container */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}

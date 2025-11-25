@@ -1,0 +1,314 @@
+.navbar {
+  background: var(--surface-2);
+  padding: 5px 10px;
+  min-height: 35px;
+  align-content: center;
+  overflow: visible; /* allow dropdown to extend outside */
+  color: var(--text);
+}
+
+/* Ensure main navbar uses its own theme */
+body[data-theme="dark"] .navbar {
+  --bg: #0b1022;
+  --text: #ffffff;
+  --muted: #cbd5e1;
+  --border: #334155;
+  --surface-1: #111e2b;
+  --surface-2: #1e293b;
+  --surface-3: #0f172a;
+  --surface-4: #132033;
+  color: var(--text);
+}
+
+.navbar .nav-link {
+  display: flex;
+  color: var(--text);
+  align-items: center;
+  transition: color 0.3s;
+  font-size: 0.8rem; 
+
+}
+
+.navbar .nav-link:hover {
+  color: var(--accent);
+}
+.navbar .navbar-brand {
+  font-weight: bold;
+  color: var(--text);
+}
+.navbar .navbar-brand:hover {
+  cursor: pointer;
+}
+.navbar .dropdown-menu {
+  background: var(--surface-1);
+  position: absolute; /* render outside navbar flow */
+  z-index: 1050;
+}
+.navbar .dropdown-item {
+  color: var(--text);
+  font-size: 0.7rem;
+  transition: background 0.3s, color 0.3s;
+}
+.navbar .dropdown-item:hover {
+  background: var(--surface-3);
+  border-radius: 10px;
+  color: var(--text);
+}
+.navbar .dropdown-item:focus {
+  background: var(--surface-3);
+  color: var(--text);
+}
+.navbar .dropdown-toggle::after {
+  border-top: 0.3em solid var(--text);
+}
+.navbar .dropdown-toggle:hover::after {
+  border-top: 0.3em solid var(--accent);
+}
+.navbar .navbar-toggler {
+  border: none;
+  padding: 0.15rem 0.35rem;   
+  font-size: 0.85rem;          
+}
+
+
+/* .navbar .navbar-toggler-icon {
+  width: 1rem;   
+  height: 1rem; 
+  color: #bebec0; 
+} */
+
+/* .navbar .navbar-toggler:hover {
+  background: transparent;
+} */
+
+/* .navbar .navbar-collapse {
+  justify-content: flex-end;
+  color: #d8d8db;
+} */
+
+@media (max-width: 768px) {
+  .navbar .nav-link {
+    font-size: 0.9rem; 
+  }
+  .navbar .navbar-brand {
+    font-size: 1.2rem; 
+  }
+}
+@media (max-width: 576px) {
+  .navbar .nav-link {
+    font-size: 1rem; 
+  }
+  .navbar .navbar-brand {
+    font-size: 1.5rem; 
+  }
+}
+
+/* Improve collapsed navbar layout on small/medium screens */
+@media (max-width: 991.98px) {
+  .navbar .navbar-collapse {
+    background: var(--surface-2);
+    padding: 10px 12px;
+    border-radius: 6px;
+    overflow: visible; /* don't clip dropdowns */
+  }
+  .navbar .navbar-nav {
+    align-items: flex-start;
+    width: 100%;
+    gap: 4px;
+  }
+  .navbar .nav-link {
+    width: 100%;
+    padding: 10px 8px;
+  }
+  .navbar .d-flex { /* search form wrapper */
+    width: 100%;
+    margin-top: 8px;
+  }
+  .navbar .form-control {
+    width: 100%;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+  .navbar .btn {
+    width: 100%;
+    margin-top: 6px;
+    font-size: 0.85rem;
+    padding: 0.4rem 0.6rem;
+  }
+}
+
+/* Additional styles for better spacing and alignment */
+/* .navbar .nav-item {
+  margin-left: 15px;
+} */
+.navbar .nav-item:first-child {
+  margin-left: 0;
+}
+.navbar .dropdown {
+  position: relative;
+}
+.navbar .dropdown-menu {
+  top: 100%;
+  left: 0;
+  margin-top: 0.5rem;
+}
+.navbar .dropdown-menu.show {
+  display: block;
+}
+
+.navbar .dropdown-item {
+  padding: 8px 16px;
+}
+
+
+.navbar .dropdown-item:active {
+  background: #004085;
+  color: white;
+}
+.navbar .dropdown-item:disabled {
+  color: rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+  background: transparent;
+}
+.navbar .dropdown-item:disabled:hover {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.5);
+}
+.navbar .dropdown-menu {
+  border: 1px solid #444;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+.navbar .dropdown-item:hover {
+  background: #023770;
+  color: white;
+}
+.navbar .dropdown-item:focus {
+  background: #0056b3;
+  color: white;
+}
+
+.navbar .dropdown-toggle:focus {
+  outline: none;
+  box-shadow: none;
+}
+.navbar .dropdown-toggle:active {
+  outline: none;
+  box-shadow: none;
+}
+.navbar .navbar-toggler:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.navbar .navbar-toggler:active {
+  outline: none;
+  box-shadow: none;
+}
+
+/* .navbar .collapse {
+  flex-grow: 0;
+  color: #adadad;
+}  */
+
+
+.navbar .navbar-nav {
+  align-items: center;
+} 
+
+.navbar .navbar-nav .nav-link {
+  padding: 8px 12px;
+}
+
+.navbar .navbar-nav .nav-link.active {
+  color: #007bff;
+}
+
+.navbar .navbar-nav .nav-link:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.navbar .auth-links {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+  flex-wrap: nowrap;
+}
+
+.navbar .signin-link {
+  color: var(--text) !important;
+  font-weight: 500;
+  padding: 4px 10px !important;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+.navbar .signin-link:hover {
+  background-color: var(--surface-3);
+}
+
+.navbar .signup-link {
+  background-color: var(--accent) !important;
+  color: white !important;
+  font-weight: 600;
+  padding: 4px 12px !important;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+.navbar .signup-link:hover {
+  background-color: var(--accent-hover) !important;
+}
+
+.theme-toggle {
+  margin-left: 10px;
+  background: transparent;
+  color: var(--text);
+  border: 1px solid #434344;
+  border-radius: 6px;
+  padding: 6px 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.theme-toggle:hover { background: var(--surface-3); }
+.theme-toggle:focus { outline: none; box-shadow: none; }
+
+/* @media (max-width: 991px) {
+  .navbar-collapse {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    border-radius: 8px;
+    background: #11121f;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+    overflow: hidden;
+    height: auto;
+    width: 200px;
+    background: white; 
+   }
+}  */
+
+@media (min-width: 992px) {
+  .navbar .navbar-collapse {
+    display: flex;
+    align-items: center;
+  }
+  .navbar .navbar-nav {
+    width: 100%;
+    justify-content: center;
+  }
+  .navbar .navbar-nav .nav-link {
+    text-align: center;
+  }
+  .navbar .d-flex { /* search form */
+    margin-left: auto;
+  }
+}

@@ -1,0 +1,161 @@
+.student-navbar {
+  background-color: var(--surface-1);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+}
+
+.navbar-brand h1 {
+  font-size: 24px;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.student-navbar .navbar-links {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex: 1;
+  margin: 0 20px;
+}
+
+.student-navbar .nav-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 15px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.student-navbar .nav-link:hover {
+  background-color: var(--surface-2);
+  color: var(--accent);
+}
+
+.student-navbar .nav-link.active {
+  background-color: var(--surface-3);
+  color: var(--accent);
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: var(--text);
+  padding: 8px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background-color: var(--surface-2);
+}
+
+.student-menu {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.student-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.student-name {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 15px;
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: var(--accent-hover);
+}
+
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--text);
+}
+
+@media (max-width: 768px) {
+  .student-navbar .navbar-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background-color: var(--surface-1);
+    flex-direction: column;
+    gap: 0;
+    margin: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .student-navbar .navbar-links.active {
+    max-height: 400px;
+  }
+
+  .student-navbar .nav-link {
+    width: 100%;
+    border-radius: 0;
+    padding: 15px 20px;
+  }
+
+  .mobile-toggle {
+    display: block;
+  }
+
+  .student-menu {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .student-info {
+    display: none;
+  }
+}

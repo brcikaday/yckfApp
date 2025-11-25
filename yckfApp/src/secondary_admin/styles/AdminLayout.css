@@ -1,0 +1,47 @@
+.secondary-admin-layout {
+  display: flex;
+  height: 100vh;
+  background-color: var(--bg);
+}
+
+.secondary-admin-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.secondary-admin-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 30px;
+  background-color: var(--bg);
+}
+
+/* Scrollbar Styling */
+.secondary-admin-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.secondary-admin-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.secondary-admin-content::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+.secondary-admin-content::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
+
+@media (max-width: 768px) {
+  .secondary-admin-layout {
+    flex-direction: column;
+  }
+
+  .secondary-admin-content {
+    padding: 20px;
+  }
+}

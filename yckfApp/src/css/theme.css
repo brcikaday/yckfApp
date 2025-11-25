@@ -1,0 +1,56 @@
+/* Global theme styles */
+.app-root {
+  color: var(--text);
+  background-color: var(--bg);
+}
+
+/* Dark theme text colors - only for student app and main site */
+.student-app[data-theme="dark"] h1,
+.student-app[data-theme="dark"] h2,
+.student-app[data-theme="dark"] h3,
+.student-app[data-theme="dark"] h4,
+.student-app[data-theme="dark"] h5,
+.student-app[data-theme="dark"] h6,
+.student-app[data-theme="dark"] p,
+.student-app[data-theme="dark"] span,
+.student-app[data-theme="dark"] div,
+.student-app[data-theme="dark"] li,
+.student-app[data-theme="dark"] td,
+.student-app[data-theme="dark"] th {
+  color: var(--text);
+}
+
+/* Secondary text elements */
+.student-app[data-theme="dark"] .text-muted,
+.student-app[data-theme="dark"] .text-secondary,
+.student-app[data-theme="dark"] .subtitle,
+.student-app[data-theme="dark"] small {
+  color: var(--muted);
+}
+
+/* Cards and containers */
+.student-app[data-theme="dark"] .card,
+.student-app[data-theme="dark"] .container,
+.student-app[data-theme="dark"] .list-group-item {
+  background-color: var(--surface-1);
+  border-color: var(--border);
+  color: var(--text);
+}
+
+/* Form elements */
+.student-app[data-theme="dark"] input,
+.student-app[data-theme="dark"] textarea,
+.student-app[data-theme="dark"] select {
+  background-color: var(--surface-2);
+  border-color: var(--border);
+  color: var(--text);
+}
+
+/* Tables */
+.student-app[data-theme="dark"] table {
+  color: var(--text);
+}
+
+.student-app[data-theme="dark"] .table-striped tbody tr:nth-of-type(odd) {
+  background-color: var(--surface-2);
+}

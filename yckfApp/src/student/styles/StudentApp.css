@@ -1,0 +1,135 @@
+
+.student-app {
+  background-color: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+/* Ensure text colors are properly applied in dark mode */
+.student-app[data-theme="dark"] {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+/* Force dark mode colors for nested elements */
+.student-app[data-theme="dark"] .course-card,
+.student-app[data-theme="dark"] .course-title,
+.student-app[data-theme="dark"] .course-desc,
+.student-app[data-theme="dark"] .course-subtitle,
+.student-app[data-theme="dark"] .section-title,
+.student-app[data-theme="dark"] .section-desc,
+.student-app[data-theme="dark"] .card-title,
+.student-app[data-theme="dark"] .card-text,
+.student-app[data-theme="dark"] .profile-info,
+.student-app[data-theme="dark"] .blog-title,
+.student-app[data-theme="dark"] .blog-content {
+  color: var(--text) !important;
+}
+
+.student-app[data-theme="dark"] .course-card {
+  background-color: var(--surface-1);
+  border-color: var(--border);
+}
+
+.student-app[data-theme="dark"] .course-card:hover {
+  border-color: var(--accent);
+  background-color: var(--surface-2);
+}
+
+.student-app[data-theme="dark"] .tag {
+  background-color: var(--surface-2);
+  color: var(--text);
+}
+
+/* Secondary elements in dark mode */
+.student-app[data-theme="dark"] .text-muted,
+.student-app[data-theme="dark"] .card-subtitle,
+.student-app[data-theme="dark"] .meta-info {
+  color: var(--muted) !important;
+}
+
+/* Interactive elements in dark mode */
+.student-app[data-theme="dark"] .btn-outline-primary {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.student-app[data-theme="dark"] .btn-outline-primary:hover {
+  background-color: var(--accent);
+  color: white;
+}
+
+/* Force light theme for auth pages and admin */
+.login-container,
+.register-container,
+.admin-root {
+  background-color: var(--surface-1) !important;
+  color: var(--text) !important;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.student-app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.student-main {
+  flex: 1;
+  padding: 40px 20px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .student-main {
+    padding: 20px 15px;
+  }
+}
+
+/* Common Styles */
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  font-size: 18px;
+  color: var(--muted);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--muted);
+}
+
+.empty-state p {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.empty-state button {
+  padding: 10px 20px;
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.empty-state button:hover {
+  background-color: var(--accent-hover);
+}

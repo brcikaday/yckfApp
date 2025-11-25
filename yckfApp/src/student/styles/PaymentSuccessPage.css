@@ -1,0 +1,60 @@
+.payment-success-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  flex-direction: column;
+  text-align: center;
+}
+
+.status-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.status-message .icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.status-message.success .icon {
+  color: var(--success);
+}
+
+.status-message.error .icon {
+  color: var(--danger);
+}
+
+.spinner {
+  font-size: 2rem;
+  color: var(--info);
+  animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 600px) {
+  .payment-success-container {
+    padding: 1rem;
+  }
+
+  .status-message .icon {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+}
