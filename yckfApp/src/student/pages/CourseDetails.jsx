@@ -54,8 +54,8 @@ const CourseDetails = ({ student }) => {
               headers: { Authorization: `Bearer ${token}` },
             }
           );
-          setIsEnrolled(enrollmentResponse.data.enrolled || false);
-          setHasDonated(enrollmentResponse.data.donated || false);
+          setIsEnrolled(enrollmentResponse.data.is_enrolled || false);
+          setHasDonated(enrollmentResponse.data.has_donated || false);
         } catch (error) {
           console.error("Error checking enrollment status:", error);
         }

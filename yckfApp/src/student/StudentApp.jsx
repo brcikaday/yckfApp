@@ -3,6 +3,7 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useTheme } from "../ThemeContext";
+import api from "../../api";
 
 import StudentLayout from "./StudentLayout";
 import Dashboard from "./pages/Dashboard";
@@ -34,18 +35,18 @@ function StudentApp() {
     }
   }, [theme]);
 
-  // TODO: Fetch real student data from backend here
-  // useEffect(() => {
-  //   const fetchStudentProfile = async () => {
-  //     try {
-  //       const response = await api.get('/student/profile');
-  //       setStudentData(response.data);
-  //     } catch (error) {
-  //       console.error('Error fetching student profile:', error);
-  //     }
-  //   };
-  //   if (token) fetchStudentProfile();
-  // }, []);
+  // Fetch real student data from backend
+  useEffect(() => {
+    const fetchStudentProfile = async () => {
+      try {
+        const response = await api.get('/student/profile');
+        setStudentData(response.data);
+      } catch (error) {
+        console.error('Error fetching student profile:', error);
+      }
+    };
+    if (studentData) fetchStudentProfile();
+  }, []);
 
   return (
     <>

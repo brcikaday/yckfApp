@@ -2,13 +2,13 @@
 
 import { useState } from "react";
 import { FaUser, FaLock, FaCamera, FaSave } from "react-icons/fa";
+import api from "../../../api";
 import "../styles/ProfilePage.css";
 
 const ProfilePage = ({ student, setStudentData }) => {
   const [profileData, setProfileData] = useState({
     name: student?.name || "",
     email: student?.email || "",
-    phone: student?.phone || "",
   });
 
   const [passwordData, setPasswordData] = useState({
@@ -38,7 +38,8 @@ const ProfilePage = ({ student, setStudentData }) => {
   const handleSaveProfile = async (e) => {
     e.preventDefault();
     try {
-      // API call would go here
+      const response = await api.put("/student/change-profile", profileData);
+
       setStudentData({
         ...student,
         ...profileData,
@@ -46,7 +47,12 @@ const ProfilePage = ({ student, setStudentData }) => {
       setMessage({ type: "success", text: "Profile updated successfully!" });
       setTimeout(() => setMessage(null), 3000);
     } catch (error) {
-      setMessage({ type: "error", text: "Failed to update profile" });
+      console.error("Profile update error:", error);
+      setMessage({
+        type: "error",
+        text: error.response?.data?.message || "Failed to update profile",
+      });
+      setTimeout(() => setMessage(null), 3000);
     }
   };
 
@@ -55,11 +61,25 @@ const ProfilePage = ({ student, setStudentData }) => {
 
     if (passwordData.newPassword !== passwordData.confirmPassword) {
       setMessage({ type: "error", text: "Passwords do not match" });
+      setTimeout(() => setMessage(null), 3000);
+      return;
+    }
+
+    if (passwordData.newPassword.length < 6) {
+      setMessage({
+        type: "error",
+        text: "Password must be at least 6 characters",
+      });
+      setTimeout(() => setMessage(null), 3000);
       return;
     }
 
     try {
-      // API call would go here
+      await api.put("/student/change-password", {
+        current_password: passwordData.currentPassword,
+        new_password: passwordData.newPassword,
+      });
+
       setPasswordData({
         currentPassword: "",
         newPassword: "",
@@ -68,7 +88,12 @@ const ProfilePage = ({ student, setStudentData }) => {
       setMessage({ type: "success", text: "Password changed successfully!" });
       setTimeout(() => setMessage(null), 3000);
     } catch (error) {
-      setMessage({ type: "error", text: "Failed to change password" });
+      console.error("Password change error:", error);
+      setMessage({
+        type: "error",
+        text: error.response?.data?.message || "Failed to change password",
+      });
+      setTimeout(() => setMessage(null), 3000);
     }
   };
 
@@ -109,17 +134,6 @@ const ProfilePage = ({ student, setStudentData }) => {
                 value={profileData.email}
                 onChange={handleProfileChange}
                 placeholder="Enter your email"
-              />
-            </div>
-
-            <div className="form-group">
-              <label>Phone Number</label>
-              <input
-                type="tel"
-                name="phone"
-                value={profileData.phone}
-                onChange={handleProfileChange}
-                placeholder="Enter your phone number"
               />
             </div>
 
