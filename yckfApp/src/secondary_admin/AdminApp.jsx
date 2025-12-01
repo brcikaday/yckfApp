@@ -10,8 +10,6 @@ import Users from "./pages/Users";
 import Enrollments from "./pages/Enrollments";
 import Settings from "./pages/Settings";
 import FinancialSettings from "./pages/FinancialSettings";
-import DonationRanges from "./pages/DonationRanges";
-import PaymentKeys from "./pages/PaymentKeys";
 import AuditLogs from "./pages/AuditLogs";
 import Toast from "./components/Toast";
 import "./styles/AdminApp.css";
@@ -56,14 +54,6 @@ function SecondaryAdminApp() {
                 <Route
                   path="/financial-settings"
                   element={<FinancialSettings showToast={showToast} />}
-                />
-                <Route
-                  path="/donation-ranges"
-                  element={<DonationRanges showToast={showToast} />}
-                />
-                <Route
-                  path="/payment-keys"
-                  element={<PaymentKeys showToast={showToast} />}
                 />
                 <Route
                   path="/audit-logs"

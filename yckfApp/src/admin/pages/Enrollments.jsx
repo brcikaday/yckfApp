@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "../styles/Enrollments.css";
+import api from "../../../api";
 
 const Enrollments = ({ showToast }) => {
   const [enrollments, setEnrollments] = useState([]);
@@ -15,7 +16,7 @@ const Enrollments = ({ showToast }) => {
   const fetchEnrollments = async () => {
     try {
       setLoading(true);
-      const response = await axios.get("http://localhost:5000/enrollments");
+      const response = await api.get("/enrollments");
       setEnrollments(response.data || []);
     } catch (error) {
       console.error("Error fetching enrollments:", error);
@@ -28,7 +29,7 @@ const Enrollments = ({ showToast }) => {
   const handleDeleteEnrollment = async (enrollmentId) => {
     if (window.confirm("Are you sure you want to delete this enrollment?")) {
       try {
-        await axios.delete(`http://localhost:5000/enrollments/${enrollmentId}`);
+        await api.delete(`/enrollments/${enrollmentId}`);
         showToast("Enrollment deleted successfully");
         fetchEnrollments();
       } catch (error) {

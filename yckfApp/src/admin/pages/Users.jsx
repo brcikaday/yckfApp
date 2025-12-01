@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "../styles/Users.css";
+import api from "../../../api";
 
 const Users = ({ showToast }) => {
   const [users, setUsers] = useState([]);
@@ -17,7 +18,7 @@ const Users = ({ showToast }) => {
   const fetchUsers = async () => {
     try {
       setLoading(true);
-      const response = await axios.get("http://127.0.0.1:5000/users");
+      const response = await api.get("/users");
       setUsers(response.data || []);
     } catch (error) {
       console.error("Error fetching users:", error);
@@ -29,7 +30,7 @@ const Users = ({ showToast }) => {
 
   const handleChangeRole = async (userId, role) => {
     try {
-      await axios.put(`http://127.0.0.1:5000/users/${userId}/role`, {
+      await api.put(`/users/${userId}/role`, {
         role,
       });
       showToast("User role updated successfully");
@@ -44,7 +45,7 @@ const Users = ({ showToast }) => {
   const handleDeleteUser = async (userId) => {
     if (window.confirm("Are you sure you want to delete this user?")) {
       try {
-        await axios.delete(`http://localhost:5000/api/users/${userId}`);
+        await api.delete(`/users/${userId}`);
         showToast("User deleted successfully");
         fetchUsers();
       } catch (error) {

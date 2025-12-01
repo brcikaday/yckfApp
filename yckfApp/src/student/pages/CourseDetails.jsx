@@ -11,6 +11,7 @@ import {
 } from "react-icons/fa";
 import "../styles/CourseDetails.css";
 import api from "../../../api";
+import CertificateSection from "../components/CertificateSection";
 
 const CourseDetails = ({ student }) => {
   const { id } = useParams();
@@ -20,6 +21,7 @@ const CourseDetails = ({ student }) => {
   const [selectedLesson, setSelectedLesson] = useState(null);
   const [isEnrolled, setIsEnrolled] = useState(false);
   const [hasDonated, setHasDonated] = useState(false);
+  const [progress, setProgress] = useState(0);
 
   const getEmbedUrl = (url) => {
     if (!url) return null;
@@ -56,6 +58,7 @@ const CourseDetails = ({ student }) => {
           );
           setIsEnrolled(enrollmentResponse.data.is_enrolled || false);
           setHasDonated(enrollmentResponse.data.has_donated || false);
+          setProgress(enrollmentResponse.data.progress || 0);
         } catch (error) {
           console.error("Error checking enrollment status:", error);
         }
@@ -94,6 +97,13 @@ const CourseDetails = ({ student }) => {
             order: lesson.order || 0,
           }))
           .sort((a, b) => a.order - b.order);
+
+        // Calculate progress
+        const completedCount = formattedLessons.filter(l => l.completed).length;
+        const calculatedProgress = formattedLessons.length > 0 
+          ? Math.round((completedCount / formattedLessons.length) * 100)
+          : 0;
+        setProgress(calculatedProgress);
 
         setLessons(formattedLessons);
         if (formattedLessons.length > 0) {
@@ -146,6 +156,31 @@ const CourseDetails = ({ student }) => {
     } catch (error) {
       console.error("Error enrolling in course:", error);
       alert("An error occurred. Please try again.");
+    }
+  };
+
+  const handleMarkComplete = async (lessonId) => {
+    try {
+      await api.put(`/courses/${id}/progress`, {
+        lesson_id: lessonId,
+        completed: true
+      });
+      
+      // Update local state
+      setLessons(prev => prev.map(lesson => 
+        lesson.id === lessonId ? { ...lesson, completed: true } : lesson
+      ));
+      
+      // Recalculate progress
+      const updatedLessons = lessons.map(lesson => 
+        lesson.id === lessonId ? { ...lesson, completed: true } : lesson
+      );
+      const completedCount = updatedLessons.filter(l => l.completed).length;
+      const newProgress = Math.round((completedCount / updatedLessons.length) * 100);
+      setProgress(newProgress);
+      
+    } catch (error) {
+      console.error("Error updating progress:", error);
     }
   };
 
@@ -269,6 +304,17 @@ const CourseDetails = ({ student }) => {
                   )}
                 </div>
               )}
+
+              {selectedLesson && isEnrolled && (
+                <button
+                  className="btn btn-primary"
+                  onClick={() => handleMarkComplete(selectedLesson.id)}
+                  disabled={selectedLesson.completed}
+                  style={{ marginTop: "1rem" }}
+                >
+                  {selectedLesson.completed ? "✓ Completed" : "Mark as Complete"}
+                </button>
+              )}
             </>
           )}
         </div>
@@ -299,6 +345,15 @@ const CourseDetails = ({ student }) => {
           </div>
         </div>
       </div>
+
+      {/* Certificate Section */}
+      {isEnrolled && (
+        <CertificateSection 
+          courseId={id} 
+          progress={progress} 
+          courseName={course.title}
+        />
+      )}
     </div>
   );
 };

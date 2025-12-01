@@ -18,22 +18,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
       icon: "💰",
       path: "/secondary-admin/financial-settings",
     },
-    {
-      label: "Donation Ranges",
-      icon: "🎁",
-      path: "/secondary-admin/donation-ranges",
-    },
-    {
-      label: "Payment Keys",
-      icon: "🔑",
-      path: "/secondary-admin/payment-keys",
-    },
     { label: "Audit Logs", icon: "📋", path: "/secondary-admin/audit-logs" },
-    {
-      label: "Secondary Admins",
-      icon: "🔐",
-      path: "/secondary-admin/secondary-admins",
-    },
     { label: "Settings", icon: "⚙️", path: "/secondary-admin/settings" },
   ];
 

@@ -18,8 +18,6 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
       icon: "💰",
       path: "/admin/financial-settings",
     },
-    { label: "Donation Ranges", icon: "🎁", path: "/admin/donation-ranges" },
-    { label: "Payment Keys", icon: "🔑", path: "/admin/payment-keys" },
     { label: "Audit Logs", icon: "📋", path: "/admin/audit-logs" },
     { label: "Secondary Admins", icon: "🔐", path: "/admin/secondary-admins" },
     { label: "Settings", icon: "⚙️", path: "/admin/settings" },

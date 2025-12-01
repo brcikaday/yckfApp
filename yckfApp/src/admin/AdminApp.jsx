@@ -11,8 +11,6 @@ import Enrollments from "./pages/Enrollments";
 import Settings from "./pages/Settings";
 import SecondaryAdmins from "./pages/SecondaryAdmins";
 import FinancialSettings from "./pages/FinancialSettings";
-import DonationRanges from "./pages/DonationRanges";
-import PaymentKeys from "./pages/PaymentKeys";
 import AuditLogs from "./pages/AuditLogs";
 import Toast from "./components/Toast";
 import "./styles/AdminApp.css";
@@ -57,14 +55,6 @@ function AdminApp() {
                 <Route
                   path="/financial-settings"
                   element={<FinancialSettings showToast={showToast} />}
-                />
-                <Route
-                  path="/donation-ranges"
-                  element={<DonationRanges showToast={showToast} />}
-                />
-                <Route
-                  path="/payment-keys"
-                  element={<PaymentKeys showToast={showToast} />}
                 />
                 <Route
                   path="/audit-logs"
